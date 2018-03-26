@@ -8,6 +8,7 @@ tags:
 ---
 之前在vultr（一家云服务商）上买的VPS突然ping不通了，导致上面部署的ss服务不可用了。原因估计是ip被墙了，尝试删除原来的Ubuntu实例，然后新建一个实例，结果获取的ip还是跟之前一样。无奈只能添加一个新的ip（收取一点费用）。本文以`Ubuntu 16.04`为例。
 将新的ip添加到脚本中：
+<!-- more -->
 ```
 # vi /etc/network/interfaces
 
@@ -29,7 +30,7 @@ iface ens3:1 inet static
 ```
 
 ## 部署shadowsocks服务
-详细安装方式请参考官网shadowsocks.org。本文选择安装使用最多的python版本ss。也可以选择go、libev(适合嵌入式设备)、QT_C++、perl等版本。
+详细安装方式请参考官网[shadowsocks.org](www.shadowsocks.org)。本文选择安装使用最多的python版本ss。也可以选择go、libev(适合嵌入式设备)、QT_C++、perl等版本。
 ## 安装
 ```
 $ pip install shadowsocks
