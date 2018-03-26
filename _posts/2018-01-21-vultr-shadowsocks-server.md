@@ -30,7 +30,7 @@ iface ens3:1 inet static
 ```
 
 ## 部署shadowsocks服务
-详细安装方式请参考官网[shadowsocks.org](www.shadowsocks.org)。本文选择安装使用最多的python版本ss。也可以选择go、libev(适合嵌入式设备)、QT_C++、perl等版本。
+详细安装方式请参考官网[shadowsocks.org][1]。本文选择安装使用最多的python版本ss。也可以选择go、libev(适合嵌入式设备)、QT_C++、perl等版本。
 ## 安装
 ```
 $ pip install shadowsocks
@@ -55,3 +55,5 @@ $ pip install shadowsocks
 ```
 ssserver -c /etc/shadowsocks -q &
 ```
+
+[1]: http://www.shadowsocks.org "shadowsocks"
