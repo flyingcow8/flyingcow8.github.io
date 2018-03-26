@@ -14,7 +14,7 @@ tags:
 因此本文的解决方案是采用iBeacon和三边测量法实现室内定位。本文中使用iBeacon基站采用了TI CC2541蓝牙芯片。由于iBeacon是一套开放的协议，因此无论是iOS还是Android手机，只要硬件上支持低功耗蓝牙（BLE），即可适用iBeacon协议与应用。本文使用iPhone进行测试。
 
 # 算法简介
-![三边测量法]({{ site.url }}/assets/images/ trilateration.jpg)
+![三边测量法]({{ site.url }}/assets/images/trilateration.jpg)
 
 上图是三边测量定位法的原理。假设D是移动设备，A、B、C是iBeacon基站。D通过扫描到周围iBeacon信息，得到与A、B、C点的距离，由于A、B、C的位置固定且已知，通过三个圆的交点即确定了D的坐标。当然，这只是理想的状况，实际中情况更复杂，可能会同时收到10多个iBeacon基站的信息，而且无线测距的精度会很不稳定，造成三圆相交没有交点的情况，需要我们自己设计算法来解决这些问题。
 
