@@ -39,7 +39,7 @@ pip install shadowsocks
 新建json配置文件，/etc/shadowsocks.json
 ```json
 {
-    "server":"207.246.83.xxx",
+    "server":"111.111.111.111",
     "server_port":8388,
     "local_port":1080,
     "password":"123456",
@@ -47,13 +47,25 @@ pip install shadowsocks
     "method":"aes-256-cfb"
 }
 ```
-启动shadowsocks server
+启动shadowsocks server(后台运行)
 ```sh
-ssserver -c /etc/shadowsocks
+ssserver -c /etc/shadowsocks -d start
 ```
-加入到开自启动脚本~/.bashrc，-q选项表示安静模式，只会打印错误或者警告
-```sh
-ssserver -c /etc/shadowsocks -q &
+加入到开自启动脚本~/.bashrc，防止重启服务器后需要手动重启服务
+
+***
+从油管学到一种更加方便的部署方式，如下。
+* 在vultr部署一台CentOS 7 x64的VPS。
+* 使用root登陆后，运行以下命令安装ss：
 ```
+wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+chmod +x shadowsocks-all.sh
+./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
+```
+* 开启BBR加速，油管4K视频无压力！
+```
+wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+```
+最后附上视频地址：https://www.youtube.com/watch?v=pwZkEYjHNUA
 
 [1]: http://www.shadowsocks.org "shadowsocks"
