@@ -5,6 +5,8 @@ categories: web
 tags:
   - flask uwsgi nginx
 ---
+> 本文目的是解决http.server(python内置)不适用生产环境和并发场景下应用的需求
+> <!-- more -->
 ## environment
 Ubuntu 16.04.6 LTS
 Flask 1.0.3
